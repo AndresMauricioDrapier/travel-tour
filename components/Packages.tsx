@@ -2,7 +2,6 @@ import { PACKAGES } from "@/constants";
 import Image from "next/image";
 import React from "react";
 import { RiSearchLine, RiTimeLine } from "react-icons/ri";
-import Button from "./Button";
 import Link from "next/link";
 
 const Packages = () => {

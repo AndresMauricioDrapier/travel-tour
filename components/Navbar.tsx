@@ -3,7 +3,7 @@ import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import Button from "./Button";
+import ButtonMe from "./Button";
 import { transform } from "next/dist/build/swc";
 
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
         ))}
       </ul>
       <div className="hidden lg:block">
-        <Button
+        <ButtonMe
           type="button"
           title="Login"
           icon="/svg/user.svg"
@@ -47,7 +47,7 @@ const Navbar = () => {
 
       {!menuOpened ? (
         <Image
-          src="menu.svg"
+          src="/svg/menu.svg"
           alt="menu"
           width={28}
           height={28}
@@ -56,7 +56,7 @@ const Navbar = () => {
         />
       ) : (
         <Image
-          src="close.svg"
+          src="/svg/close.svg"
           alt="menu"
           width={28}
           height={28}

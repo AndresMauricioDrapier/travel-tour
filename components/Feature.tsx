@@ -67,7 +67,7 @@ const Feature = () => {
   return (
     <section className="max-container padding-container bg-slate-10 py-12">
       <div className="w-[90%] m-auto">
-        <h3 className="bold-32 text-center">Viajes concludos</h3>
+        <h3 className="bold-32 text-center">Viajes concluidos</h3>
         <p className="text-center max-w-lg m-auto text-gray-30 py-6">
           Estos son los viajes que ya hemos realizado, dale click para mas información sobre el viaje.
         </p>

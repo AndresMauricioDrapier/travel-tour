@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-type ButtonProps = {
+type ButtonMeProps = {
     type: 'button' | 'submit';
     title: string;
     icon?: string;
     variant: string;
 }
-const Button = ({type, title, icon, variant} : ButtonProps) => {
+const ButtonMe = ({type, title, icon, variant} : ButtonMeProps) => {
   return (
     <button className={`flexCenter gap-2 border rounded-full ${variant}`}
     type={type}
@@ -17,4 +17,4 @@ const Button = ({type, title, icon, variant} : ButtonProps) => {
   )
 }
 
-export default Button
+export default ButtonMe

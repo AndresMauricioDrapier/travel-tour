@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+import ButtonMe from "./Button";
 import { CATEGORIES } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +16,7 @@ const Hero = () => {
         Este será nuestro proximo viaje, el cual haremos del 1 al 6 de abril.
         </p>
         <div className="btn mt-8">
-          <Button
+          <ButtonMe
             type="button"
             title="Ver el viaje"
             icon="/svg/send-plane.svg"
