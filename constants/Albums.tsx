@@ -12,6 +12,42 @@ export interface Album {
         "/japon/tokyo-tower.webp",
     },
     {
+      name: "React Rendezvous",
+      artist: "Ethan Byte",
+      cover:
+        "/japon/tokyo-tower.webp",
+    },
+    {
+      name: "React Rendezvous",
+      artist: "Ethan Byte",
+      cover:
+        "/japon/tokyo-tower.webp",
+    },
+    {
+      name: "React Rendezvous",
+      artist: "Ethan Byte",
+      cover:
+        "/japon/tokyo-tower.webp",
+    },
+    {
+      name: "React Rendezvous",
+      artist: "Ethan Byte",
+      cover:
+        "/japon/tokyo-tower.webp",
+    },
+    {
+      name: "React Rendezvous",
+      artist: "Ethan Byte",
+      cover:
+        "/japon/tokyo-tower.webp",
+    },
+    {
+      name: "React Rendezvous",
+      artist: "Ethan Byte",
+      cover:
+        "/japon/tokyo-tower.webp",
+    },
+    {
       name: "Async Awakenings",
       artist: "Nina Netcode",
       cover:

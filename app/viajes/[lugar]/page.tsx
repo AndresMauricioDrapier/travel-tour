@@ -38,20 +38,18 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
     <div className="col-span-3 lg:col-span-4 lg:border-l max-container padding-container ">
       <div className="h-full px-4 py-6 lg:px-8">
         <Tabs defaultValue="music" className="h-full space-y-6">
-          <div className="space-between flex items-center ">
-          <ul className="flex flex-wrap gap-4">
           <TabsList>
-              <TabsTrigger value="music" className="bg-black text-white flexCenter gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+              <TabsTrigger value="music" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
                 Music
               </TabsTrigger>
-              <TabsTrigger value="podcasts" className="relative bg-slate-700">Podcasts</TabsTrigger>
-              <TabsTrigger value="live" className="relative bg-slate-700">
+              <TabsTrigger value="podcasts" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+                Podcasts
+                </TabsTrigger>
+              <TabsTrigger value="live" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
                 Live
               </TabsTrigger>
-            </TabsList>
-        </ul>
+          </TabsList>
             
-          </div>
           <TabsContent
             value="music"
             className="border-none p-0 outline-none"
@@ -67,9 +65,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
               </div>
             </div>
             <Separator className="my-4" />
-            <div className="relative">
-              <ScrollArea>
-                <div className="flex space-x-4 pb-4">
+              <ScrollArea className="relative flex space-x-4 pb-4">
                   {listenNowAlbums.map((album) => (
                     <AlbumArtwork
                       key={album.name}
@@ -80,10 +76,8 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
                       height={330}
                     />
                   ))}
-                </div>
                 <ScrollBar orientation="horizontal" />
               </ScrollArea>
-            </div>
             <div className="mt-6 space-y-1">
               <h2 className="text-2xl font-semibold tracking-tight">
                 Made for You
