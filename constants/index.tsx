@@ -127,7 +127,7 @@ export const PACKAGES = [
     title: "japon",
     price: "0€",
     URL: "/japon/monte-fuji.webp",
-    des: "Proximamente veremos como es Italia",
+    des: "Proximamente veremos como es Japon",
     duration: "6 dias",
   }
 ];

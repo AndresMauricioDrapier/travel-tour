@@ -1,9 +1,18 @@
 import Image from "next/image"
+import { PlusCircledIcon } from "@radix-ui/react-icons"
 
 import { cn } from "@/lib/utils"
-
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuSeparator,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu"
 import { Album } from "@/constants/Albums"
-import { ContextMenu, ContextMenuTrigger } from "@radix-ui/react-context-menu"
 
 
 interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -25,7 +34,7 @@ export function AlbumArtwork({
     <div className={cn("space-y-3", className)} {...props}>
       <ContextMenu>
         <ContextMenuTrigger>
-          <div className="overflow-hidden rounded-md">
+          <div className="overflow-hidden rounded">
             <Image
               src={album.cover}
               alt={album.name}

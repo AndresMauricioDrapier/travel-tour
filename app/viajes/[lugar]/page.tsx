@@ -6,10 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import ButtonMe from "@/components/Button";
 import { AlbumArtwork } from "@/components/AlbumArt";
-import { ScrollBar } from "@/components/ui/scroll-area";
+import { ScrollBar, ScrollArea} from "@/components/ui/scroll-area";
 import { listenNowAlbums, madeForYouAlbums } from "@/constants/Albums";
 import { Separator } from "@radix-ui/react-context-menu";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
 
 
@@ -37,54 +36,30 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
               
     <div className="col-span-3 lg:col-span-4 lg:border-l max-container padding-container ">
       <div className="h-full px-4 py-6 lg:px-8">
-        <Tabs defaultValue="music" className="h-full space-y-6">
-          <TabsList>
-              <TabsTrigger value="music" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
-                Music
+        <Tabs defaultValue="lugares" className="h-full space-y-6">
+        <TabsList>
+              <TabsTrigger value="lugares" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+                Lugares
               </TabsTrigger>
-              <TabsTrigger value="podcasts" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
-                Podcasts
+              <TabsTrigger value="restaurantes" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+                Restaurantes
                 </TabsTrigger>
-              <TabsTrigger value="live" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
-                Live
+              <TabsTrigger value="hotel" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+                Hotel
+              </TabsTrigger>
+              <TabsTrigger value="nosotros" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+                Nosotros
+              </TabsTrigger>
+              <TabsTrigger value="tickets" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+                Tickets
               </TabsTrigger>
           </TabsList>
             
-          <TabsContent
-            value="music"
-            className="border-none p-0 outline-none"
-          >
-            <div className="flex items-center justify-between">
-              <div className="space-y-1">
-                <h2 className="text-2xl font-semibold tracking-tight">
-                  Listen Now
-                </h2>
-                <p className="text-sm text-muted-foreground">
-                  Top picks for you. Updated daily.
-                </p>
-              </div>
-            </div>
-            <Separator className="my-4" />
-              <ScrollArea className="relative flex space-x-4 pb-4">
-                  {listenNowAlbums.map((album) => (
-                    <AlbumArtwork
-                      key={album.name}
-                      album={album}
-                      className="w-[250px]"
-                      aspectRatio="portrait"
-                      width={250}
-                      height={330}
-                    />
-                  ))}
-                <ScrollBar orientation="horizontal" />
-              </ScrollArea>
+          <TabsContent value="lugares" className="border-none p-0 outline-none">
             <div className="mt-6 space-y-1">
               <h2 className="text-2xl font-semibold tracking-tight">
-                Made for You
+                Imagenes de los lugares
               </h2>
-              <p className="text-sm text-muted-foreground">
-                Your personal playlists. Updated daily.
-              </p>
             </div>
             <Separator className="my-4" />
             <div className="relative">
@@ -105,21 +80,118 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
               </ScrollArea>
             </div>
           </TabsContent>
-          <TabsContent
-            value="podcasts"
-            className="h-full flex-col border-none p-0 data-[state=active]:flex"
-          >
-            <div className="flex items-center justify-between">
+          <TabsContent value="restaurantes" className="h-full flex-col border-none p-0 data-[state=active]:flex">
+            
+              <div className="mt-6 space-y-1">
+                <h2 className="text-2xl font-semibold tracking-tight">
+                  Imagenes del restaurante o la comida
+                </h2>
+              </div>
+              <Separator className="my-4" />
+            <div className="relative">
+              <ScrollArea>
+                <div className="flex space-x-4 pb-4">
+                  {madeForYouAlbums.map((album) => (
+                    <AlbumArtwork
+                      key={album.name}
+                      album={album}
+                      className="w-[150px]"
+                      aspectRatio="square"
+                      width={150}
+                      height={150}
+                    />
+                  ))}
+                </div>
+                <ScrollBar orientation="horizontal" />
+              </ScrollArea>
+            </div>
+          
+          </TabsContent>
+
+          <TabsContent value="hotel" className="h-full flex-col border-none p-0 data-[state=active]:flex">
+           
               <div className="space-y-1">
                 <h2 className="text-2xl font-semibold tracking-tight">
-                  New Episodes
+                  Imagenes del hotel y de nosotros
                 </h2>
-                <p className="text-sm text-muted-foreground">
-                  Your favorite podcasts. Updated daily.
-                </p>
               </div>
+              <Separator className="my-4" />
+            <div className="relative">
+              <ScrollArea>
+                <div className="flex space-x-4 pb-4">
+                  {madeForYouAlbums.map((album) => (
+                    <AlbumArtwork
+                      key={album.name}
+                      album={album}
+                      className="w-[150px]"
+                      aspectRatio="square"
+                      width={150}
+                      height={150}
+                    />
+                  ))}
+                </div>
+                <ScrollBar orientation="horizontal" />
+              </ScrollArea>
             </div>
+            
           </TabsContent>
+
+          <TabsContent value="nosotros" className="h-full flex-col border-none p-0 data-[state=active]:flex">
+            
+              <div className="space-y-1">
+                <h2 className="text-2xl font-semibold tracking-tight">
+                  Nuestras imagenes
+                </h2>
+              </div>
+              <Separator className="my-4" />
+            <div className="relative">
+              <ScrollArea>
+                <div className="flex space-x-4 pb-4">
+                  {madeForYouAlbums.map((album) => (
+                    <AlbumArtwork
+                      key={album.name}
+                      album={album}
+                      className="w-[150px]"
+                      aspectRatio="square"
+                      width={150}
+                      height={150}
+                    />
+                  ))}
+                </div>
+                <ScrollBar orientation="horizontal" />
+              </ScrollArea>
+            </div>
+            
+          </TabsContent>
+
+          <TabsContent value="tickets" className="h-full flex-col border-none p-0 data-[state=active]:flex">
+            
+              <div className="space-y-1">
+                <h2 className="text-2xl font-semibold tracking-tight">
+                  Tickets
+                </h2>
+              </div>
+              <Separator className="my-4" />
+            <div className="relative">
+              <ScrollArea>
+                <div className="flex space-x-4 pb-4">
+                  {madeForYouAlbums.map((album) => (
+                    <AlbumArtwork
+                      key={album.name}
+                      album={album}
+                      className="w-[150px]"
+                      aspectRatio="square"
+                      width={150}
+                      height={150}
+                    />
+                  ))}
+                </div>
+                <ScrollBar orientation="horizontal" />
+              </ScrollArea>
+            </div>
+
+          </TabsContent>
+
         </Tabs>
       </div>
     </div>
