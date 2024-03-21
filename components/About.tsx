@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 
 const About = () => {
   const router = useRouter();
-
   const lugar = (location: string) => {
     router.push(`/viajes/${location}`);
   };

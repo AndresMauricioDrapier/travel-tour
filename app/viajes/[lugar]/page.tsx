@@ -1,24 +1,24 @@
 'use client'
-import { PACKAGES } from "@/constants";
-import React, { useState } from "react";
-import { CATEGORIES } from "@/constants";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ButtonMe from "@/components/Button";
 import { AlbumArtwork } from "@/components/AlbumArt";
 import { ScrollBar, ScrollArea} from "@/components/ui/scroll-area";
-import { listenNowAlbums, madeForYouAlbums } from "@/constants/Albums";
 import { Separator } from "@radix-ui/react-context-menu";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
+import { LUGARVIAJE } from "@/constants/Albums";
 
 
 const viajeDetails = ({ params }: { params: { lugar: string } }) => {
   const { lugar } = params;
-  const lugarData = PACKAGES.find((p) => p.title.toLocaleLowerCase() === lugar.toLocaleLowerCase());
+  const esPortAventura = (location: string) => {
+    return location === "portAventura" ?  'port aventura':location.toLocaleLowerCase() ;
+  }
+  const lugarData = LUGARVIAJE.find((p) => p.title.toLocaleLowerCase() === esPortAventura(lugar));
 
   return (
     <>
-    <section className={`relative  bg-cover bg-center bg-no-repeat h-[50vh] w-full z-10 pb-5`}>
+    <section className={`relative bg-cover bg-center bg-no-repeat h-[50vh] w-full z-10 pb-5`}>
       {/* <span className="absolute top-0 left-0 h-full w-full bg-black z-0 opacity-25"></span> */}
       <div className="max-container padding-container relative top-28 sm:top-1/3 z-10">
         <h1 className="bold-44 sm:bold-64 text-black capitalize max-w-[36rem]">
@@ -29,7 +29,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
         </p>
         <div className="btn mt-8">
         </div>
-        <h4 className="text-black my-4 bold-22">Lugares que veremos.</h4>
+        <h4 className="text-black my-4 bold-22">Imagenes.</h4>
       </div>
       
     </section>
@@ -42,7 +42,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
                 Lugares
               </TabsTrigger>
               <TabsTrigger value="restaurantes" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
-                Restaurantes
+                Restaurantes/Comida
                 </TabsTrigger>
               <TabsTrigger value="hotel" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
                 Hotel
@@ -55,8 +55,8 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
               </TabsTrigger>
           </TabsList>
             
-          <TabsContent value="lugares" className="border-none p-0 outline-none">
-            <div className="mt-6 space-y-1">
+          <TabsContent id="lugares" value="lugares" className="h-full flex-col border-none p-0 data-[state=active]:flex">
+            <div className="space-y-1">
               <h2 className="text-2xl font-semibold tracking-tight">
                 Imagenes de los lugares
               </h2>
@@ -65,7 +65,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
             <div className="relative">
               <ScrollArea>
                 <div className="flex space-x-4 pb-4">
-                  {madeForYouAlbums.map((album) => (
+                  {lugarData?.lugares.map((album) => (
                     <AlbumArtwork
                       key={album.name}
                       album={album}
@@ -80,9 +80,8 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
               </ScrollArea>
             </div>
           </TabsContent>
-          <TabsContent value="restaurantes" className="h-full flex-col border-none p-0 data-[state=active]:flex">
-            
-              <div className="mt-6 space-y-1">
+          <TabsContent id="restaurantes" value="restaurantes" className="h-full flex-col border-none p-0 data-[state=active]:flex">
+              <div className="space-y-1">
                 <h2 className="text-2xl font-semibold tracking-tight">
                   Imagenes del restaurante o la comida
                 </h2>
@@ -91,7 +90,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
             <div className="relative">
               <ScrollArea>
                 <div className="flex space-x-4 pb-4">
-                  {madeForYouAlbums.map((album) => (
+                  {lugarData?.lugares.map((album) => (
                     <AlbumArtwork
                       key={album.name}
                       album={album}
@@ -109,7 +108,6 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
           </TabsContent>
 
           <TabsContent value="hotel" className="h-full flex-col border-none p-0 data-[state=active]:flex">
-           
               <div className="space-y-1">
                 <h2 className="text-2xl font-semibold tracking-tight">
                   Imagenes del hotel y de nosotros
@@ -119,7 +117,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
             <div className="relative">
               <ScrollArea>
                 <div className="flex space-x-4 pb-4">
-                  {madeForYouAlbums.map((album) => (
+                  {lugarData?.lugares.map((album) => (
                     <AlbumArtwork
                       key={album.name}
                       album={album}
@@ -147,7 +145,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
             <div className="relative">
               <ScrollArea>
                 <div className="flex space-x-4 pb-4">
-                  {madeForYouAlbums.map((album) => (
+                  {lugarData?.nosotros.map((album) => (
                     <AlbumArtwork
                       key={album.name}
                       album={album}
@@ -175,7 +173,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
             <div className="relative">
               <ScrollArea>
                 <div className="flex space-x-4 pb-4">
-                  {madeForYouAlbums.map((album) => (
+                  {lugarData?.lugares.map((album) => (
                     <AlbumArtwork
                       key={album.name}
                       album={album}

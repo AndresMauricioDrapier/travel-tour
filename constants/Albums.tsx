@@ -1,203 +1,105 @@
 export interface Album {
     name: string
-    artist: string
     cover: string
   }
   
-  export const listenNowAlbums: Album[] = [
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-  ]
   
-  export const madeForYouAlbums: Album[] = [
+  export const LUGARVIAJE = [
     {
-      name: "Thinking Components",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
+      title: "Madrid",
+      lugares:[
+        {
+          name: "Plaza españa",
+          cover:"/madrid/lugares/img1.jpg",
+        },
+        {
+          name: "Miguel",
+          cover:"/madrid/lugares/img2.jpg",
+        },
+        {
+          name: "Torre Eiffel",
+          cover:"/madrid/lugares/img3.jpg",
+        },
+        {
+          name: "Rey leon",
+          cover:"/madrid/lugares/img4.jpg",
+        }
+      ],
+      restaurantes:[],
+      hoteles:[],
+      nosotros:[
+        {
+          name: "Plaza españa",
+          cover:"/madrid/nosotros/img1.jpg",
+        },
+        {
+          name: "Miguel",
+          cover:"/madrid/nosotros/img2.jpg",
+        },
+        {
+          name: "Torre Eiffel",
+          cover:"/madrid/nosotros/img3.jpg",
+        }
+      ], 
+      tickets:[],
     },
     {
-      name: "Functional Fury",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
+      title: "Port Aventura",
+      lugares:[],
+      restaurantes:[],
+      hoteles:[],
+      nosotros:[], 
+      tickets:[],
     },
     {
-      name: "React Rendezvous",
-      artist: "Ethan Byte",
-      cover:
-        "/japon/tokyo-tower.webp",
+      title: "Portugal",
+      lugares:[],
+      restaurantes:[],
+      hoteles:[],
+      nosotros:[], 
+      tickets:[],
     },
     {
-      name: "Stateful Symphony",
-      artist: "Beth Binary",
-      cover:
-        "/japon/tokyo-tower.webp",
+      title: "Benidorm",
+      lugares:[],
+      restaurantes:[],
+      hoteles:[],
+      nosotros:[], 
+      tickets:[],
     },
     {
-      name: "Async Awakenings",
-      artist: "Nina Netcode",
-      cover:
-        "/japon/tokyo-tower.webp",
+      title: "Calpe",
+      lugares:[],
+      restaurantes:[],
+      hoteles:[],
+      nosotros:[], 
+      tickets:[],
     },
     {
-      name: "The Art of Reusability",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
+      title: "Vigo",
+      lugares:[],
+      restaurantes:[],
+      hoteles:[],
+      nosotros:[], 
+      tickets:[],
     },
     {
-      name: "The Art of Reusability",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
+      title: "Italia",
+      lugares:[],
+      restaurantes:[],
+      hoteles:[],
+      nosotros:[], 
+      tickets:[],
     },
     {
-      name: "The Art of Reusability",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "The Art of Reusability",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "The Art of Reusability",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "The Art of Reusability",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "The Art of Reusability",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "The Art of Reusability",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "The Art of Reusability",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-    {
-      name: "The Art of Reusability",
-      artist: "Lena Logic",
-      cover:
-        "/japon/tokyo-tower.webp",
-    },
-  ]
+      title: "japon",
+      lugares:[],
+      restaurantes:[],
+      hoteles:[],
+      nosotros:[], 
+      tickets:[],
+    }
+  ];
+  
+  
+  

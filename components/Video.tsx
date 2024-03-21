@@ -11,6 +11,8 @@ const Video = () => {
 
   return (
     <section className="max-container padding-container py-16">
+      <h3 className="bold-32 text-center">Nuestro ultimo viaje</h3>
+
       <div className="bg-video bg-cover bg-center bg-no-repeat h-[500px] md:h-[400px] xl:h-[800px] grid place-items-center rounded-2xl relative">
         {!isPlaying && (
           <div

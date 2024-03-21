@@ -1,12 +1,14 @@
+'use client'
 import { PACKAGES } from "@/constants";
 import Image from "next/image";
 import React from "react";
 import { RiSearchLine, RiTimeLine } from "react-icons/ri";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Packages = () => {
   return (
-    <section className="max-container padding-container pt-16 bg-slate-10">
+    <section className="max-container padding-container pt-16 bg-slate-10" id="viajes">
       <h3 className="bold-32 text-center">Nuestros viajes</h3>
       <p className="text-center max-w-lg m-auto text-gray-30 py-6">
         Estos son los viajes concluidos que hemos hecho.
@@ -14,8 +16,8 @@ const Packages = () => {
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
         {PACKAGES.map((elem) => (
           <PackageItem
-            key={elem.URL}
-            URL={elem.URL}
+            key={elem.urlImg}
+            urlImg={elem.urlImg}
             title={elem.title}
             price={elem.price}
             des={elem.des}
@@ -28,18 +30,25 @@ const Packages = () => {
 };
 
 type PackageItem = {
-  URL: string;
+  urlImg: string;
   title: string;
   price: string;
   des: string;
   duration: string;
 };
-const PackageItem = ({ URL, title, price, des, duration }: PackageItem) => {
+const PackageItem = ({ urlImg, title, price, des, duration }: PackageItem) => {
+  const router = useRouter();
+  const lugar = (location: string) => {
+    router.push(`/viajes/${location}`);
+  };
+  const esPortAventura = (location: string) => {
+    location.toLocaleLowerCase() === "port aventura" ?  lugar("portAventura"):lugar(location) ;
+  }
   return (
-    <div className="overflow-hidden rounded-tl-xl rounded-tr-xl border border-slate-200 group">
+    <div className="overflow-hidden rounded-tl-xl rounded-tr-xl border border-slate-200 group" onClick={() => esPortAventura(title)}>
       <div className="overflow-hidden relative">
         <Image
-          src={URL}
+          src={urlImg}
           alt="img"
           height={400}
           width={500}
@@ -60,7 +69,7 @@ const PackageItem = ({ URL, title, price, des, duration }: PackageItem) => {
             <RiTimeLine />
             <span className="medium-14">{duration}</span>
           </p>
-          <Link href='/' className="medium-14 px-4 py-2 rounded-md border bg-black text-white">
+          <Link href={`/viajes/${title}`} className="medium-14 px-4 py-2 rounded-md border bg-black text-white">
             <span>Ir al viaje</span>
           </Link>
         </div>

@@ -2,7 +2,6 @@ import React from "react";
 import ButtonMe from "./Button";
 import { CATEGORIES } from "@/constants";
 import Image from "next/image";
-import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -21,10 +20,11 @@ const Hero = () => {
             title="Ver el viaje"
             icon="/svg/send-plane.svg"
             variant="btn_white_rounded"
+            
           />
         </div>
-        <h4 className="text-white my-4 bold-22">Lugares que veremos.</h4>
-        <ul className="flex flex-wrap gap-4">
+        <h4 className="text-white my-4 bold-22">Imagenes.</h4>
+        <ul className="flex flex-wrap gap-4" >
           {CATEGORIES.map((category) => (
             <CategoryItem 
             key={category.title}
@@ -45,10 +45,11 @@ type CategoryItem = {
 
 const CategoryItem = ({ icon, title }: CategoryItem) => {
   return (
-    <Link href="/" className="bg-white flexCenter gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
-      <Image src={icon} alt="icon" height={22} width={22} className="regular-28"/>
+    
+    <div className="bg-white flexCenter gap-2 px-4 py-2 hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+      <Image src={icon} alt="icon" height={22} width={22} className="regular-28" />
       <span className="capitalize regular-16">{title}</span>
-    </Link>
+    </div>
   );
 };
 

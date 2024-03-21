@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import ButtonMe from "./Button";
-import { transform } from "next/dist/build/swc";
 
 const Navbar = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -34,14 +33,14 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
-      <div className="hidden lg:block">
+      {/* <div className="hidden lg:block">
         <ButtonMe
           type="button"
           title="Login"
           icon="/svg/user.svg"
           variant="btn_dark_rounded"
         />
-      </div>
+      </div> */}
 
       {/* MOBILE */}
 

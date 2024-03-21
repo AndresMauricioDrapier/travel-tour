@@ -4,8 +4,12 @@ import Image from "next/image";
 import Slider from "react-slick";
 import { RiArrowRightSLine, RiArrowLeftSLine, RiSearchLine } from "react-icons/ri";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+
 
 const Feature = () => {
+  
   const NextArrow = (props: any) => {
     const { onClick } = props;
     return (
@@ -72,7 +76,7 @@ const Feature = () => {
           Estos son los viajes que ya hemos realizado, dale click para mas información sobre el viaje.
         </p>
         {/* CONTAINER */}
-        <div className="pt-16">
+        <div className="pt-16" >
           <Slider {...settings}>
             {FEATURE.map((feature) => (
               <FeatureItem
@@ -94,8 +98,16 @@ type FeatureItem = {
 };
 
 const FeatureItem = ({ URL, title }: FeatureItem) => {
+  const router = useRouter();
+  const lugar = (location: string) => {
+    router.push(`/viajes/${location}`);
+  };
+  const esPortAventura = (location: string) => {
+    location.toLocaleLowerCase() === "port aventura" ?  lugar("portAventura"):lugar(location) ;
+  }
+
   return (
-    <div className="mx-3 overflow-hidden border border-slate-200 group">
+    <div className="mx-3 overflow-hidden border border-slate-200 group" onClick={()=>esPortAventura(title)}>
       <div className="overflow-hidden relative">
         <Image
           src={URL}

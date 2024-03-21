@@ -1,7 +1,8 @@
+
 // NAVIGATION
 export const NAV_LINKS = [
   { href: "/", key: "Inicio", label: "Inicio", iconURL: "/svg/home.svg" },
-  { href: "/", key: "Viajes", label: "Viajes", iconURL: "/svg/earth.svg" },
+  { href: "#viajes", key: "Viajes", label: "Viajes", iconURL: "/svg/earth.svg" },
   { href: "/", key: "Dudas", label: "Dudas", iconURL: "/svg/contact.svg" },
 ];
 
@@ -12,17 +13,23 @@ export const CATEGORIES = [
     icon: "/svg/earth.svg",
   },
   {
-    title: "Restaurantes",
+    title: "Restaurantes/Comida",
     icon: "/svg/restaurant.svg",
+
   },
   {
-    title: "Hotels",
+    title: "Hotel",
     icon: "/svg/hotel.svg",
   },
   {
-    title: "Fotos",
-    icon: "",
+    title: "Nosotros",
+    icon: "/svg/couple.svg",
   },
+  {
+    title: "Tickets",
+    icon: "/svg/ticket.svg",
+  },
+  
 ];
 
 // FEATURE SECTION
@@ -77,56 +84,56 @@ export const PACKAGES = [
   {
     title: "Madrid",
     price: "0€",
-    URL: "/madrid/madridPlaza.webp",
+    urlImg: "/madrid/madridPlaza.webp",
     des: "Un viaje que lleva esperando hacer mi pareja.",
     duration: "6 dias.",
   },
   {
     title: "Port Aventura",
     price: "0€",
-    URL: "/portAventura/portAventura.webp",
+    urlImg: "/portAventura/portAventura.webp",
     des: "Unas vacaciones aluciantes que nos lleva nuestra adrenalina al maximo",
     duration: "2 veces 4 dias.",
   },
   {
     title: "Portugal",
     price: "0€",
-    URL: "/portugal/faroPortugal.webp",
+    urlImg: "/portugal/faroPortugal.webp",
     des: "Unas vacaciones en las que hemos podido ver el algarve de Portugal.",
     duration: "2 days",
   },
   {
     title: "Benidorm",
     price: "0€",
-    URL: "/benidorm/bali.webp",
+    urlImg: "/benidorm/bali.webp",
     des: "",
     duration: "2 days",
   },
   {
     title: "Calpe",
     price: "0€",
-    URL: "/calpe/ifach.webp",
+    urlImg: "/calpe/ifach.webp",
     des: "Vimos el precioso Peñon de Ifach y también recorrimos la ciudad por dentro.",
     duration: "2 days",
   },
   {
     title: "Vigo",
     price: "0€",
-    URL: "/vigo/vigoArbol.webp",
+    urlImg: "/vigo/vigoArbol.webp",
     des: "Recorrimos las calles que tiene, además de poder patinar sobre hielo y saborear la gastronomia que tiene",
     duration: "2 days",
   },
   {
     title: "Italia",
     price: "0€",
-    URL: "/italia/pisa.webp",
+    urlImg: "/italia/pisa.webp",
     des: "Proximamente veremos como es Italia",
     duration: "6 dias",
   },
   {
     title: "japon",
     price: "0€",
-    URL: "/japon/monte-fuji.webp",
+    urlImg: "/japon/monte-fuji.webp",
     des: "Proximamente veremos como es Japon",
     duration: "6 dias",
   }
@@ -159,3 +166,6 @@ export const SOCIALS = {
     "/svg/linkedin.svg",
   ],
 };
+
+
+
