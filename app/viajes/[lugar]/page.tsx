@@ -30,7 +30,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
         <h1 className="bold-44 sm:bold-64 text-white capitalize max-w-[36rem]">
          {lugarData?.title}
         </h1>
-        <p className="regular-16 mt-6 text-black lg:w-1/2">
+        <p className="regular-16 mt-6 text-white lg:w-1/2">
         Este será nuestro proximo viaje, el cual haremos del 1 al 6 de abril.
         </p>
         <div className="btn mt-8">
