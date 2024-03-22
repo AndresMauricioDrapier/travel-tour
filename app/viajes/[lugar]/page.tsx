@@ -131,8 +131,8 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
                       album={album}
                       className="w-[200px]"
                       aspectRatio="portrait"
-                      width={150}
-                      height={150}
+                      width={400}
+                      height={300}
                     />
                   ))}
                 </div>
