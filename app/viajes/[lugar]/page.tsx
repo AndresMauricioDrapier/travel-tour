@@ -27,7 +27,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
     {background!==''?<section className={`relative bg-cover bg-center bg-no-repeat h-[50vh] w-full z-10 pb-5`} style={{backgroundImage:`url(${lugarData?.background})`}}>
       {/* <span className="absolute top-0 left-0 h-full w-full bg-black z-0 opacity-25"></span> */}
       <div className="max-container padding-container relative top-28 sm:top-1/3 z-10">
-        <h1 className="bold-44 sm:bold-64 text-black capitalize max-w-[36rem]">
+        <h1 className="bold-44 sm:bold-64 text-white capitalize max-w-[36rem]">
          {lugarData?.title}
         </h1>
         <p className="regular-16 mt-6 text-black lg:w-1/2">
