@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative bg-hero bg-cover bg-center bg-no-repeat h-[100vh] w-full z-10 pb-12">
+    <section className="relative bg-cover bg-center bg-no-repeat h-[50vh] w-full z-10 pb-5" style={{backgroundImage:`url(/italia/coliseo.webp)`}}>
       {/* <span className="absolute top-0 left-0 h-full w-full bg-black z-0 opacity-25"></span> */}
       <div className="max-container padding-container relative top-28 sm:top-1/3 z-10">
         <h1 className="bold-44 sm:bold-64 text-white capitalize max-w-[36rem]">

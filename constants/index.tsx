@@ -83,56 +83,48 @@ export const ABOUT = [
 export const PACKAGES = [
   {
     title: "Madrid",
-    price: "0€",
     urlImg: "/madrid/madridPlaza.webp",
     des: "Un viaje que lleva esperando hacer mi pareja.",
     duration: "6 dias.",
   },
   {
     title: "Port Aventura",
-    price: "0€",
     urlImg: "/portAventura/portAventura.webp",
     des: "Unas vacaciones aluciantes que nos lleva nuestra adrenalina al maximo",
     duration: "2 veces 4 dias.",
   },
   {
     title: "Portugal",
-    price: "0€",
     urlImg: "/portugal/faroPortugal.webp",
     des: "Unas vacaciones en las que hemos podido ver el algarve de Portugal.",
     duration: "2 days",
   },
   {
     title: "Benidorm",
-    price: "0€",
     urlImg: "/benidorm/bali.webp",
-    des: "",
+    des: "Vacaciones las cuales pudimos tranquilizarnos",
     duration: "2 days",
   },
   {
     title: "Calpe",
-    price: "0€",
     urlImg: "/calpe/ifach.webp",
     des: "Vimos el precioso Peñon de Ifach y también recorrimos la ciudad por dentro.",
     duration: "2 days",
   },
   {
     title: "Vigo",
-    price: "0€",
     urlImg: "/vigo/vigoArbol.webp",
     des: "Recorrimos las calles que tiene, además de poder patinar sobre hielo y saborear la gastronomia que tiene",
     duration: "2 days",
   },
   {
     title: "Italia",
-    price: "0€",
     urlImg: "/italia/pisa.webp",
     des: "Proximamente veremos como es Italia",
     duration: "6 dias",
   },
   {
     title: "japon",
-    price: "0€",
     urlImg: "/japon/monte-fuji.webp",
     des: "Proximamente veremos como es Japon",
     duration: "6 dias",
@@ -154,16 +146,26 @@ export const FOOTER_LINKS = [
 export const FOOTER_CONTACT_INFO = {
   title: "Contactame",
   links: [
-    { label: "Contact Number", value: "658200623" },
-    { label: "Email Address", value: "mauricioDrapier@gmail.com" },
+    { label: "Numero de contacto", value: "+34 658 200 623" },
+    { label: "Correo electronico", value: "mauricioDrapier@gmail.com" },
   ],
 };
 
 export const SOCIALS = {
   title: "Social",
   links: [
-    "/svg/instagram.svg",
-    "/svg/linkedin.svg",
+    {
+      img:'/svg/instagram.svg',
+      link:'https://www.instagram.com/andresuqui18/'
+    },
+    {
+      img:'/svg/github.svg',
+      link:'https://github.com/AndresMauricioDrapier'
+    },
+    {
+      img:'/svg/linkedin.svg',
+      link:'www.linkedin.com/in/andres-mauricio-drapier'
+    }
   ],
 };
 

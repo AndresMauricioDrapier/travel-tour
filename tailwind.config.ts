@@ -73,9 +73,17 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
         '5xl': '40px',
       },
-      backgroundImage: {
-        hero: "url('/italia/coliseo.webp')",
-      },
+      // backgroundImage: {
+      //   hero: "url('/italia/coliseo.webp')",
+      //   portugal: "url('/portugal/faroPortugal.webp')",
+      //   portAventura: "url('/portAventura/portAventura.webp')",
+      //   madrid: "url('/madrid/madridPlaza.webp')",
+      //   japon: "url('/japon/monte-fuji.webp')",
+      //   italia: "url('/italia/coliseo.webp')",
+      //   calpe: "url('/calpe/ifach.webp')",
+      //   benidorm: "url('/benidorm/bali.webp')",
+      //   vigo: "url('/vigo/vigoArbol.webp')",
+      // },
       screens: {
         xs: '400px',
         '3xl': '1680px',

@@ -26,18 +26,24 @@ const Footer = () => {
             <div className="flex flex-col gap-5">
               <FooterColumn title={FOOTER_CONTACT_INFO.title}>
                 {FOOTER_CONTACT_INFO.links.map((link) => (
-                  <Link href="/" key={link.label} className="flex gap-4 md:flex-col lg:flex-row">
-                    <p>{link.label}:</p><p className="medium-14">{link.value}</p>
-                  </Link>
+                   <div key={link.label} className="flex gap-4 md:flex-col lg:flex-row">
+                   <p>{link.label}:</p>
+                   {link.label === "Correo electronico" ? (
+                       <a href={`mailto:${link.value}`} className="medium-14">{link.value}</a>
+                   ) : (
+                       <a href={`tel:${link.value}`} className="medium-14">{link.value}</a>
+                   )}
+               </div>
                 ))}
               </FooterColumn>
             </div>
             <div className="flex">
               <FooterColumn title={SOCIALS.title}>
                 <ul className="flex gap-4">
-                {SOCIALS.links.map((link) => (
-                  <Link href="/" key={link}>
-                    <Image src={link} alt="logo" height={22} width={22}/>
+                {SOCIALS.links.map(({img,link}) => (
+                  
+                  <Link href={link} key={img}>
+                    <Image src={img} alt="logo" height={22} width={22}/>
                   </Link>
                 ))}
                 </ul>

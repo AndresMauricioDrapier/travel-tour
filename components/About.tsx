@@ -24,7 +24,7 @@ const About = () => {
           <div className="flex flex-wrap">
             {ABOUT.map((about) => (
               <AboutItem
-                key={about.icon}
+                key={about.title}
                 icon={about.icon}
                 title={about.title}
               />
@@ -87,7 +87,7 @@ const About = () => {
           <div className="flex flex-wrap">
             {ABOUT.map((about) => (
               <AboutItem
-                key={about.icon}
+                key={`${about.title}jap`}
                 icon={about.icon}
                 title={about.title}
               />

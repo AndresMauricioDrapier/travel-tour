@@ -1,5 +1,5 @@
 'use client'
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AlbumArtwork } from "@/components/AlbumArt";
@@ -16,9 +16,15 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
   }
   const lugarData = LUGARVIAJE.find((p) => p.title.toLocaleLowerCase() === esPortAventura(lugar));
 
-  return (
+  const [background, setBackground] = useState('')
+    useEffect(() => {
+      setBackground(`bg-${lugarData?.background}`)
+    }, [lugarData])
+    
+  
+  return ( 
     <>
-    <section className={`relative bg-cover bg-center bg-no-repeat h-[50vh] w-full z-10 pb-5`}>
+    {background!==''?<section className={`relative bg-cover bg-center bg-no-repeat h-[50vh] w-full z-10 pb-5`} style={{backgroundImage:`url(${lugarData?.background})`}}>
       {/* <span className="absolute top-0 left-0 h-full w-full bg-black z-0 opacity-25"></span> */}
       <div className="max-container padding-container relative top-28 sm:top-1/3 z-10">
         <h1 className="bold-44 sm:bold-64 text-black capitalize max-w-[36rem]">
@@ -29,28 +35,29 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
         </p>
         <div className="btn mt-8">
         </div>
-        <h4 className="text-black my-4 bold-22">Imagenes.</h4>
+        
       </div>
       
-    </section>
+    </section>:'Loading'}
               
     <div className="col-span-3 lg:col-span-4 lg:border-l max-container padding-container ">
-      <div className="h-full px-4 py-6 lg:px-8">
+    <h4 className="text-black my-4 lg:mx-10 mx-6 bold-22">Imagenes.</h4>
+      <div className="h-full px-4 lg:px-8">
         <Tabs defaultValue="lugares" className="h-full space-y-6">
         <TabsList>
-              <TabsTrigger value="lugares" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+              <TabsTrigger value="lugares" className="bg-black text-white my-2 mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
                 Lugares
               </TabsTrigger>
-              <TabsTrigger value="restaurantes" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+              <TabsTrigger value="restaurantes" className="bg-black text-white my-2 mx-3 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
                 Restaurantes/Comida
                 </TabsTrigger>
-              <TabsTrigger value="hotel" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+              <TabsTrigger value="hotel" className="bg-black text-white my-2 mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
                 Hotel
               </TabsTrigger>
-              <TabsTrigger value="nosotros" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+              <TabsTrigger value="nosotros" className="bg-black text-white my-2 mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
                 Nosotros
               </TabsTrigger>
-              <TabsTrigger value="tickets" className="bg-black text-white mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
+              <TabsTrigger value="tickets" className="bg-black text-white my-2 mx-2 gap-2 px-4 py-2 cursor-pointer hover:-translate-y-[2px] transition-all duration-500 rounded-md">
                 Tickets
               </TabsTrigger>
           </TabsList>
@@ -69,8 +76,8 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
                     <AlbumArtwork
                       key={album.name}
                       album={album}
-                      className="w-[150px]"
-                      aspectRatio="square"
+                      className="w-[200px]"
+                      aspectRatio="portrait"
                       width={150}
                       height={150}
                     />
@@ -80,6 +87,7 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
               </ScrollArea>
             </div>
           </TabsContent>
+
           <TabsContent id="restaurantes" value="restaurantes" className="h-full flex-col border-none p-0 data-[state=active]:flex">
               <div className="space-y-1">
                 <h2 className="text-2xl font-semibold tracking-tight">
@@ -90,12 +98,12 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
             <div className="relative">
               <ScrollArea>
                 <div className="flex space-x-4 pb-4">
-                  {lugarData?.lugares.map((album) => (
+                  {lugarData?.restaurantes.map((album) => (
                     <AlbumArtwork
                       key={album.name}
                       album={album}
-                      className="w-[150px]"
-                      aspectRatio="square"
+                      className="w-[200px]"
+                      aspectRatio="portrait"
                       width={150}
                       height={150}
                     />
@@ -110,19 +118,19 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
           <TabsContent value="hotel" className="h-full flex-col border-none p-0 data-[state=active]:flex">
               <div className="space-y-1">
                 <h2 className="text-2xl font-semibold tracking-tight">
-                  Imagenes del hotel y de nosotros
+                  Imagenes del hotel
                 </h2>
               </div>
               <Separator className="my-4" />
             <div className="relative">
               <ScrollArea>
                 <div className="flex space-x-4 pb-4">
-                  {lugarData?.lugares.map((album) => (
+                  {lugarData?.hoteles.map((album) => (
                     <AlbumArtwork
                       key={album.name}
                       album={album}
-                      className="w-[150px]"
-                      aspectRatio="square"
+                      className="w-[200px]"
+                      aspectRatio="portrait"
                       width={150}
                       height={150}
                     />
@@ -149,8 +157,8 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
                     <AlbumArtwork
                       key={album.name}
                       album={album}
-                      className="w-[150px]"
-                      aspectRatio="square"
+                      className="w-[200px]"
+                      aspectRatio="portrait"
                       width={150}
                       height={150}
                     />
@@ -173,11 +181,11 @@ const viajeDetails = ({ params }: { params: { lugar: string } }) => {
             <div className="relative">
               <ScrollArea>
                 <div className="flex space-x-4 pb-4">
-                  {lugarData?.lugares.map((album) => (
+                  {lugarData?.tickets.map((album) => (
                     <AlbumArtwork
                       key={album.name}
                       album={album}
-                      className="w-[150px]"
+                      className="w-[200px]"
                       aspectRatio="square"
                       width={150}
                       height={150}

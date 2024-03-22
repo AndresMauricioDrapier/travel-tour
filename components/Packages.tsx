@@ -19,7 +19,6 @@ const Packages = () => {
             key={elem.urlImg}
             urlImg={elem.urlImg}
             title={elem.title}
-            price={elem.price}
             des={elem.des}
             duration={elem.duration}
           />
@@ -32,11 +31,10 @@ const Packages = () => {
 type PackageItem = {
   urlImg: string;
   title: string;
-  price: string;
   des: string;
   duration: string;
 };
-const PackageItem = ({ urlImg, title, price, des, duration }: PackageItem) => {
+const PackageItem = ({ urlImg, title, des, duration }: PackageItem) => {
   const router = useRouter();
   const lugar = (location: string) => {
     router.push(`/viajes/${location}`);
@@ -59,7 +57,7 @@ const PackageItem = ({ urlImg, title, price, des, duration }: PackageItem) => {
       </div>
       <div className="p-4 bg-white">
         <div className="capitalize medium-18 flexBetween">
-          {title} <span className="text-green-50">{price}</span>
+          {title} 
         </div>
         <p className="text-gray-50 my-3 regular-14 border-b border-gray-200 pb-3">
           {des}
